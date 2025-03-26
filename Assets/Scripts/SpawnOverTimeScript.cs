@@ -6,7 +6,7 @@ public class SpawnOverTimeScript : MonoBehaviour
 
     // Object to spawn
     [SerializeField]
-    private GameObject spawnObject;
+    private GameObject spawnObjectType1;
 
     // Delay between spawns
     [SerializeField]
@@ -37,6 +37,6 @@ public class SpawnOverTimeScript : MonoBehaviour
         Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
 
         // Spawn the object at the 'spawnPoint' position
-        Instantiate(spawnObject, spawnPoint, Quaternion.identity);
+        Instantiate(spawnObjectType1, spawnPoint, Quaternion.identity);
     }
 }
