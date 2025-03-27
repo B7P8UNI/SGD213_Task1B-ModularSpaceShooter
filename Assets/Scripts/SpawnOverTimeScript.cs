@@ -4,10 +4,11 @@ using System.Collections;
 public class SpawnOverTimeScript : MonoBehaviour
 {
 
-    // Object to spawn
+    // Objects to spawn
     [SerializeField]
-    private GameObject spawnObjectType1;
-
+    private GameObject SpawnEnemyObject;
+    [SerializeField]
+    private GameObject SpawnItemObject;
     // Delay between spawns
     [SerializeField]
     private float spawnDelay = 2f;
@@ -37,6 +38,6 @@ public class SpawnOverTimeScript : MonoBehaviour
         Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
 
         // Spawn the object at the 'spawnPoint' position
-        Instantiate(spawnObjectType1, spawnPoint, Quaternion.identity);
+        Instantiate(SpawnEnemyObject, spawnPoint, Quaternion.identity);
     }
 }
