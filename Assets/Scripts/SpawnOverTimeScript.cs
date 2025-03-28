@@ -7,8 +7,6 @@ public class SpawnOverTimeScript : MonoBehaviour
     // Objects to spawn
     [SerializeField]
     private GameObject SpawnEnemyObject;
-    [SerializeField]
-    private GameObject SpawnItemObject;
     // Delay between spawns
     [SerializeField]
     private float spawnDelay = 2f;

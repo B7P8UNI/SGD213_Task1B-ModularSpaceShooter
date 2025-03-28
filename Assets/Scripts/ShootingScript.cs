@@ -11,7 +11,7 @@ public class ShootingScript : MonoBehaviour
 
     [SerializeField]
     private float fireDelay = 1f;
-
+    [SerializeField]
     private float bulletOffset = 2f;
 
     void Start()
