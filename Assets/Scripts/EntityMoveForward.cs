@@ -10,7 +10,7 @@ public class EntityMoveForward : MonoBehaviour
     private float f_InitialVelocity = 2f;
 
     private Rigidbody2D rb_Entity;
-
+    // is used to determine if Entity is Enemy or Bullet.
     [SerializeField]
     private bool bool_EntityType = true;
 
@@ -33,7 +33,7 @@ public class EntityMoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Moves Enemy Down the screen.
+        // Moves Entity Down the screen at faster speeds (upto the Entities f_Acceleration) if True, and Up if False.
         if (bool_EntityType == true)
         {
             Vector2 SpeedIncrease = Vector2.down * f_Acceleration * Time.deltaTime;

@@ -7,17 +7,17 @@ public class ShootingScript : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
-    private float lastFiredTime = 0f;
+    private float f_LastFiredTime = 0f;
 
     [SerializeField]
-    private float fireDelay = 1f;
+    private float f_FireDelay = 1f;
     [SerializeField]
-    private float bulletOffset = 2f;
+    private float f_BulletOffset = 2f;
 
     void Start()
     {
         // Do some math to perfectly spawn bullets in front of us
-        bulletOffset = GetComponent<Renderer>().bounds.size.y / 2 // Half of our size
+        f_BulletOffset = GetComponent<Renderer>().bounds.size.y / 2 // Half of our size
             + bullet.GetComponent<Renderer>().bounds.size.y / 2; // Plus half of the bullet size
     }
 
@@ -29,13 +29,14 @@ public class ShootingScript : MonoBehaviour
             float CurrentTime = Time.time;
 
             // Have a delay so we don't shoot too many bullets
-            if (CurrentTime - lastFiredTime > fireDelay)
+            if (CurrentTime - f_LastFiredTime > f_FireDelay)
             {
-                Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + bulletOffset);
+                // Fires Bullet
+                Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + f_BulletOffset);
 
                 Instantiate(bullet, spawnPosition, transform.rotation);
-
-                lastFiredTime = CurrentTime;
+                // Resets Current Time so you cannot Fire Again
+                f_LastFiredTime = CurrentTime;
             }
 
             //print("Shoot!");

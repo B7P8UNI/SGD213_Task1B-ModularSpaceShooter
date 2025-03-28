@@ -9,7 +9,7 @@ public class SpawnOverTimeScript : MonoBehaviour
     private GameObject SpawnEnemyObject;
     // Delay between spawns
     [SerializeField]
-    private float spawnDelay = 2f;
+    private float f_SpawnDelay = 2f;
 
     private Renderer ourRenderer;
 
@@ -24,11 +24,12 @@ public class SpawnOverTimeScript : MonoBehaviour
 
         // Call the given function after spawnDelay seconds, 
         // and then repeatedly call it after spawnDelay seconds.
-        InvokeRepeating("Spawn", spawnDelay, spawnDelay);
+        InvokeRepeating("Spawn", f_SpawnDelay, f_SpawnDelay);
     }
 
     void Spawn()
     {
+        // Gets the Location of the Render Space in the X axis.
         float x1 = transform.position.x - ourRenderer.bounds.size.x / 2;
         float x2 = transform.position.x + ourRenderer.bounds.size.x / 2;
 

@@ -21,6 +21,7 @@ public class PlayerMovementScript : MonoBehaviour {
     // Update is called once per frame
     void Update() 
     {
+        // Uses the Left Arrow or "A" key to move Left and the Right Arrow or "D" key to move Right.
         float HorizontalInput = Input.GetAxis("Horizontal");
 
         if (HorizontalInput != 0.0f) 
